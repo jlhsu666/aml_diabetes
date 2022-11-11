@@ -36,15 +36,17 @@ def aml():
             "WebServiceInput0":
             [
                 {
-                    'Pregnancies': request.values['p1'],
-                    'Glucose': request.values['p2'],
-                    'BloodPressure': request.values['p3'],
-                    'SkinThickness': request.values['p4'],
-                    'Insulin': request.values['p5'],
-                    'BMI': request.values['p6'],
-                    'DiabetesPedigreeFunction': request.values['p7'],
-                    'Age': request.values['p8'],
-                    'Outcome': "1",
+                    'AGE': request.values['p1'],
+                    'SEX': request.values['p2'],
+                    'BMI': request.values['p3'],
+                    'BP': request.values['p4'],
+                    'S1': request.values['p5'],
+                    'S2': request.values['p6'],
+                    'S3': request.values['p7'],
+                    'S4': request.values['p8'],
+                    'S5': '4.8598',
+                    "S6": '87',
+                    "Y": '151',
                 },
             ],
         },
@@ -54,7 +56,7 @@ def aml():
 
     body = str.encode(json.dumps(data))
 
-    url = 'http://104.214.136.95:80/api/v1/service/model0729/score'
+    url = 'http://20.239.122.214:80/api/v1/service/ai-brain/score'
     api_key = 'o1HomfPgcBcWKQpiue1eRQmQlLvA5J3B' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
