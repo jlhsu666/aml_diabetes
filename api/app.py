@@ -33,7 +33,7 @@ def aml():
 
     data = {
         "Inputs": {
-            "input1":
+            "WebServiceInput0":
             [
                 {
                     'AGE': request.values['p1'],
