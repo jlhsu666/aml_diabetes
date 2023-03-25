@@ -36,17 +36,15 @@ def aml():
             "input1":
             [
                 {
-                    'AGE': request.values['p1'],
-                    'SEX': request.values['p2'],
-                    'BMI': request.values['p3'],
-                    'BP': request.values['p4'],
-                    'S1': request.values['p5'],
-                    'S2': request.values['p6'],
-                    'S3': request.values['p7'],
-                    'S4': request.values['p8'],
-                    'S5': '4.8598',
-                    "S6": '87',
-                    "Y": '151',
+                    'Pregnancies': request.values['p1'],
+                    'Glucose': request.values['p2'],
+                    'BloodPressure': request.values['p3'],
+                    'SkinThickness': request.values['p4'],
+                    'Insulin': request.values['p5'],
+                    'BMI': request.values['p6'],
+                    'DiabetesPedigreeFunction': request.values['p7'],
+                    'Age': request.values['p8'],
+                    'Outcome': '4.8598'
                 },
             ],
         },
