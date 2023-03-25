@@ -56,8 +56,8 @@ def aml():
 
     body = str.encode(json.dumps(data))
 
-    url = 'http://20.239.122.214:80/api/v1/service/ai-brain/score'
-    api_key = 'o1HomfPgcBcWKQpiue1eRQmQlLvA5J3B' # Replace this with the API key for the web service
+    url = 'http://20.70.9.109:80/api/v1/service/brain/score'
+    api_key = '9KOw0kBlhyVauSeGfgeu72LH4UEx52Wd' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
     req = urllib.request.Request(url, body, headers)
