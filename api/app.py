@@ -10,49 +10,49 @@ def index():
 @app.route('/aml', methods=['GET','POST'])
 def aml():
 # request.values['p1']
-# data = {
-#     "Inputs": {
-#         "WebServiceInput0":
-#         [
-#             {
-#                 'Pregnancies': "6",
-#                 'Glucose': "148",
-#                 'BloodPressure': "72",
-#                 'SkinThickness': "35",
-#                 'Insulin': "0",
-#                 'BMI': "33.6",
-#                 'DiabetesPedigreeFunction': "0.627",
-#                 'Age': "50",
-#                 'Outcome': "1",
-#             },
-#         ],
-#     },
-#     "GlobalParameters": {
-#     }
-# }
-
-    data = {
-        "Inputs": {
-            "WebServiceInput0":
-            [
-                {
-                    'AGE': request.values['p1'],
-                    'SEX': request.values['p2'],
-                    'BMI': request.values['p3'],
-                    'BP': request.values['p4'],
-                    'S1': request.values['p5'],
-                    'S2': request.values['p6'],
-                    'S3': request.values['p7'],
-                    'S4': request.values['p8'],
-                    'S5': '4.8598',
-                    "S6": '87',
-                    "Y": '151',
-                },
-            ],
-        },
-        "GlobalParameters": {
-        }
+data = {
+    "Inputs": {
+        "WebServiceInput0":
+        [
+            {
+                'Pregnancies': "6",
+                'Glucose': "148",
+                'BloodPressure': "72",
+                'SkinThickness': "35",
+                'Insulin': "0",
+                'BMI': "33.6",
+                'DiabetesPedigreeFunction': "0.627",
+                'Age': "50",
+                'Outcome': "1",
+            },
+        ],
+    },
+    "GlobalParameters": {
     }
+}
+
+#     data = {
+#         "Inputs": {
+#             "WebServiceInput0":
+#             [
+#                 {
+#                     'AGE': request.values['p1'],
+#                     'SEX': request.values['p2'],
+#                     'BMI': request.values['p3'],
+#                     'BP': request.values['p4'],
+#                     'S1': request.values['p5'],
+#                     'S2': request.values['p6'],
+#                     'S3': request.values['p7'],
+#                     'S4': request.values['p8'],
+#                     'S5': '4.8598',
+#                     "S6": '87',
+#                     "Y": '151',
+#                 },
+#             ],
+#         },
+#         "GlobalParameters": {
+#         }
+#     }
 
     body = str.encode(json.dumps(data))
 
