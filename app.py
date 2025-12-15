@@ -66,7 +66,11 @@ def aml():
     # api_key = '9KOw0kBlhyVauSeGfgeu72LH4UEx52Wd' # Replace this with the API key for the web service
 
     api_key = os.getenv("AML_API_KEY")
-    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": "Bearer " + api_key
+    }
 
     req = urllib.request.Request(url, body, headers)
 
@@ -95,5 +99,5 @@ def hello(name):
     return "Hello, " + name + "!!!"
 
 if __name__=="__main__":
-    app.run()
-
+    # app.run()
+    app.run(host="0.0.0.0", port=5000, debug=True)
