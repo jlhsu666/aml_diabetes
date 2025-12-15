@@ -80,8 +80,8 @@ def aml():
         response = urllib.request.urlopen(req)
 
         result = json.loads(response.read())
-        htmlstr=htmlstr+"依據您輸入的參數，經過數據分析模型比對，診斷糖尿病的結果為"
-        if result['Results']['WebServiceOutput0'][0]['Scored Labels'] == "1.0":
+        htmlstr=htmlstr+"依據您輸入的參數，經過決策模型比對，診斷糖尿病的結果為"
+        if str(result['Results']['WebServiceOutput0'][0]['Scored Labels']) == "1.0":
             htmlstr += " 陽性"
         else:
             htmlstr += " 陰性"
