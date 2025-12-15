@@ -1,4 +1,4 @@
-Flask==2.2.2
-requests
+flask>=3.0.0,<4.0
+requests>=2.31.0,<3.0
 gunicorn
 urllib3

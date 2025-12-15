@@ -1,6 +1,7 @@
 from flask import Flask,request,render_template
 import urllib
 import json
+import os
 
 app = Flask(__name__)
 @app.route('/')
@@ -45,14 +46,12 @@ def aml():
                        "DiabetesPedigreeFunction": 0.627,
                        "Age": 50,
                        "Outcome": 1
-#                     'Pregnancies': request.values['p1'],
-#                     'Glucose': request.values['p2'],
-#                     'BloodPressure': request.values['p3'],
-#                     'SkinThickness': request.values['p4'],
-#                     'Insulin': request.values['p5'],
-#                     'BMI': request.values['p6'],
-#                     'DiabetesPedigreeFunction': request.values['p7'],
-#                     'Age': request.values['p8'],
+#                     'Glucose': request.values['p5'],
+#                     'BloodPressure': request.values['p4'],
+#                     'Insulin': request.values['p6'],
+#                     'BMI': request.values['p3'],
+#                     'Sex': request.values['p2'],
+#                     'Age': request.values['p1'],
 #                     'Outcome': '4.8598'
                 },
             ],
@@ -63,8 +62,10 @@ def aml():
 
     body = str.encode(json.dumps(data))
 
-    url = 'http://20.70.9.109:80/api/v1/service/brain/score'
-    api_key = '9KOw0kBlhyVauSeGfgeu72LH4UEx52Wd' # Replace this with the API key for the web service
+    url = 'http://78e7aa04-731a-4fc9-9d33-1b8ebe7c6806.eastasia.azurecontainer.io/score'
+    # api_key = '9KOw0kBlhyVauSeGfgeu72LH4UEx52Wd' # Replace this with the API key for the web service
+
+    api_key = os.getenv("AML_API_KEY")
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
     req = urllib.request.Request(url, body, headers)
