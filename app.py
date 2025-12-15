@@ -37,22 +37,21 @@ def aml():
             "input1":
             [
                 {
-                       "Pregnancies": 6,
-                       "Glucose": 148,
-                       "BloodPressure": 72,
-                       "SkinThickness": 35,
-                       "Insulin": 0,
-                       "BMI": 33.6,
-                       "DiabetesPedigreeFunction": 0.627,
-                       "Age": 50,
-                       "Outcome": 1
-#                     'Glucose': request.values['p5'],
-#                     'BloodPressure': request.values['p4'],
-#                     'Insulin': request.values['p6'],
-#                     'BMI': request.values['p3'],
-#                     'Sex': request.values['p2'],
-#                     'Age': request.values['p1'],
-#                     'Outcome': '4.8598'
+                    #    "Pregnancies": 6,
+                    #    "Glucose": 148,
+                    #    "BloodPressure": 72,
+                    #    "SkinThickness": 35,
+                    #    "Insulin": 0,
+                    #    "BMI": 33.6,
+                    #    "DiabetesPedigreeFunction": 0.627,
+                    #    "Age": 50,
+                    #    "Outcome": 1
+                    'Glucose': request.values['p5'],
+                    'BloodPressure': request.values['p4'],
+                    'Insulin': request.values['p6'],
+                    'BMI': request.values['p3'],
+                    'Sex': request.values['p2'],
+                    'Age': request.values['p1']
                 },
             ],
         },
@@ -99,5 +98,5 @@ def hello(name):
     return "Hello, " + name + "!!!"
 
 if __name__=="__main__":
-    # app.run()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run()
+
